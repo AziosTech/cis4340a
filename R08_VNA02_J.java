@@ -1,11 +1,11 @@
 final class Flag {
     private boolean flag = true;
    
-    public void toggle() {  // Unsafe
-      flag = !flag;
+    public synchronized void toggle() {
+      flag ^= true; // Same as flag = !flag;
     }
    
-    public boolean getFlag() { // Unsafe
+    public synchronized boolean getFlag() {
       return flag;
     }
   }
